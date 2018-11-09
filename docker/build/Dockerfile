@@ -22,7 +22,7 @@ RUN chmod +x /entrypoint
 #INSTALL RFCN-Pytorch
 ENV RFCN_ROOT ${INSTALL_ROOT}/R-FCN.pytorch
 
-RUN git clone --branch kaggle_submission https://github.com/arvindmvepa/R-FCN.pytorch ${RFCN_ROOT}
+RUN git clone --branch kaggle_submission https://github.com/jmerkow/R-FCN.rsna2018 ${RFCN_ROOT}
 RUN cd ${RFCN_ROOT} && git pull && git checkout 875918fce6e702aefdd1e63fdb729b41288efbef
 ENV RFCN_LIB ${RFCN_ROOT}/lib
 COPY resnet152_rcnn.pth /opt/R-FCN.pytorch/data/pretrained_model/
